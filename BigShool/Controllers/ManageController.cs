@@ -6,9 +6,11 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using BigSchool.Models;
+using BigShool;
 using BigShool.Models;
 
-namespace BigShool.Controllers
+namespace BigSchool.Controllers
 {
     [Authorize]
     public class ManageController : Controller
@@ -32,9 +34,9 @@ namespace BigShool.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -333,7 +335,7 @@ namespace BigShool.Controllers
             base.Dispose(disposing);
         }
 
-#region Helpers
+        #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
@@ -384,6 +386,6 @@ namespace BigShool.Controllers
             Error
         }
 
-#endregion
+        #endregion
     }
 }

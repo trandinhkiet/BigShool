@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using BigShool.Models;
+using BigSchool.Models;
 
 namespace BigShool
 {
@@ -85,6 +86,11 @@ namespace BigShool
                     new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;
+        }
+
+        internal Task CreateAsync(ApplicationUser user, string password)
+        {
+            throw new NotImplementedException();
         }
     }
 
