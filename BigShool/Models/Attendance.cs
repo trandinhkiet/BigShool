@@ -1,8 +1,24 @@
-﻿namespace BigSchool.Models
+﻿using BigShool.Models;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Web;
+
+namespace BigSchool.Models
 {
     public class Attendance
     {
-        public string AttendanceId { get; internal set; }
-        public object Course { get; internal set; }
+        public Course Course { get; set; }
+
+        [Key]
+        [Column(Order = 1)]
+        public int CourseId { get; set; }
+        public ApplicationUser Attendee { get; set; }
+
+        [Key]
+        [Column(Order = 2)]
+        public string AttendeeId { get; set; }
     }
 }

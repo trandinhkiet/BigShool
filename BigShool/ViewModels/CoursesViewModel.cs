@@ -1,4 +1,5 @@
 ﻿using BigSchool.Models;
+using BigShool.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,10 @@ namespace BigSchool.ViewModels
 
         public IEnumerable<ApplicationUser> Follows { get; set; }
 
+        public IEnumerable<Following> Fl { get; set; }
+
+
         public bool ShowAction { get; set; }
+
     }
 }

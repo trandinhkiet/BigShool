@@ -1,5 +1,6 @@
 ﻿using BigSchool.Models;
 using BigSchool.ViewModels;
+using BigShool.Models;
 using BigShool.ViewModels;
 using Microsoft.AspNet.Identity;
 using System;
@@ -8,7 +9,6 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using BigShool.Models;
 
 namespace BigSchool.Controllers
 {
@@ -61,7 +61,7 @@ namespace BigSchool.Controllers
             var userId = User.Identity.GetUserId();
 
             var courses = _dbContext.Attendances
-                .Where(a => a.AttendanceId == userId)
+                .Where(a => a.AttendeeId == userId)
                 .Select(a => a.Course)
                 .Include(l => l.Lecturer)
                 .Include(l => l.Category)
