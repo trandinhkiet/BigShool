@@ -1,8 +1,10 @@
-﻿using BigSchool.DTOs;
+﻿using BigShool.DTOs;
 using BigSchool.Models;
 using Microsoft.AspNet.Identity;
 using System.Linq;
+using System.Web.Mvc;
 using System.Web.Http;
+using System;
 
 namespace BigSchool.Controllers
 {
@@ -14,8 +16,8 @@ namespace BigSchool.Controllers
             _dbContext = new ApplicationDbContext();
         }
 
-        [HttpPost]
-        public IHttpActionResult Follow(FollowingDto followingDto)
+        [System.Web.Http.HttpPost]
+        public IHttpActionResult Follow(FollowingDTO followingDto)
         {
             var userId = User.Identity.GetUserId();
             if (_dbContext.Followings.Any(f => f.FollowerId == userId && f.FolloweeId == followingDto.FolloweeId))

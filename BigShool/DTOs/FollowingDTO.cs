@@ -7,6 +7,8 @@ namespace BigShool.DTOs
 {
     public class FollowingDTO
     {
+        internal readonly string FolloweeId;
+
         public int FollowingID { get; set; }
     }
 }
